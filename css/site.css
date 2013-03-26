@@ -1,0 +1,8 @@
+
+body {
+	background-image:url('../img/background-grid-green.png');
+	background-repeat:repeat;
+}
+.vspace {
+	height: 20px;
+}
