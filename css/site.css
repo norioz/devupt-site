@@ -6,3 +6,25 @@ body {
 .vspace {
 	height: 20px;
 }
+
+/* STYLES FOR TESTING
+================================================ */
+.testing {
+	border: 1px solid black;
+}
+
+/* Space for the question box
+================================================ */
+#question-spacer {
+	height: 245px;
+}
+
+/* Question
+================================================ */
+#question-overlay {
+	position: absolute;
+	z-index: 100;
+	top: 61px;
+	left: 0px;
+	width: 100%;
+}
