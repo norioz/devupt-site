@@ -28,6 +28,8 @@
       </div>
     </div>
     <div class="vspace"></div>
+    <!-- BODY
+    ================================================== -->
     <div class="container">
       <p class="text-center"><div id="question-spacer"></div></p>
       <div class="row">
@@ -35,6 +37,8 @@
           <p class="text-center"><img src="img/blocky-brain.png"></img></p>
         </div>
       </div>
+    <!-- QUESTION OVERLAY
+    ================================================== -->
       <div id="question-overlay-layer">
         <div class="container">
           <div class="row">
@@ -42,16 +46,17 @@
               <img class="hcenter" src="img/tape.png"></img>
               <div id="question" class="shadow">
                 <p class="date">March 28, 2013</p>
-                <p>Given an unordered array of integer numbers (lst1) and a copy of that array with two numbers removed (lst2), write a function that returns the two removed numbers.</p>
+                <p>Given an unordered array of integer numbers (arr1) and a copy of that array with two numbers removed (arr2), write a function that returns the two removed numbers.</p>
                 <div id="expander">
 <!-- 
 The editor window replaces this "pre" and copies the internal text with
 line breaks.
 -->
-<pre id="editor"># Currently only python formatting is supported.
-# Code execution is coming soon!
-# Enter your code here....
+<pre id="editor"># Currently only python is supported.
+def find_missing(arr1, arr2):
+    # Your code here....
 </pre>
+                  <pre id="output"></pre>
                 </div>
                 <div class="row">
                   <div class="span1 offset5">
@@ -64,22 +69,48 @@ line breaks.
         </div>
       </div>
     </div>
-
     <!-- Additional Scripts
     ================================================== -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/skulpt/skulpt.js" type="text/javascript"></script>
+    <script src="lib/skulpt/builtin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      function outf(text) {
+        var mypre = document.getElementById("output");
+        mypre.innerHTML = mypre.innerHTML + text;
+      }
+      function builtinRead(x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+          throw "File not found: '" + x + "'";
+        return Sk.builtinFiles["files"][x];
+      }
+      function runit() {
+        var prog = (window.editor.getValue() + window.testcode);
+        var mypre = $("#output").get(0);
+        mypre.innerHTML = '';
+        Sk.pre = "output";
+        Sk.configure({output:outf, read:builtinRead});
+        try {
+          eval(Sk.importMainWithBody("<stdin>", false, prog));
+        } catch (e) {
+          alert(e);
+        }
+      }
+    </script> 
     <script type="text/javascript">
     $("#trybtn").click(function() {
-      if ($(this).text() == 'Hide') {
-        $("#expander").slideUp();
-        $(this).text("Try it");
-      } else {
-        $("#expander").slideDown();
+      if ($(this).text() == 'Try it') {
+        $('#expander').slideDown();
         window.editor.gotoLine(4);
         window.editor.focus();
-        $(this).text("Hide");
+        $(this).text('Run');
+      } else if ($(this).text() == 'Run') {
+        runit();
+      } else if ($(this).text() == 'Hide') {
+        $('#expander').slideUp();
+        $(this).text('Try it');
       }
     });
     </script>
@@ -87,6 +118,17 @@ line breaks.
       window.editor = ace.edit("editor");
       editor.setTheme("ace/theme/tomorrow_night_bright");
       editor.getSession().setMode("ace/mode/python");
+    </script>
+    <script>
+      window.testcode = "\n\
+arr1 = [5, 7, -1, 10, 0, 9]\n\
+arr2 = [5, 7, 10, 9]\n\
+a, b = find_missing(arr1, arr2)\n\
+if a == -1 and b == 0:\n\
+    print 'TEST 1 . . . PASS'\n\
+else:\n\
+    print 'TEST 1 . . . FAILED'\n\
+";
     </script>
   </body>
 </html>
