@@ -35,20 +35,58 @@
           <p class="text-center"><img src="img/blocky-brain.png"></img></p>
         </div>
       </div>
-      <div id="question-overlay">
+      <div id="question-overlay-layer">
         <div class="container">
           <div class="row">
             <div class="span8 offset2">
-              <p class="text-center"><img src="img/taped-notice.png"></img></p>
+              <img class="hcenter" src="img/tape.png"></img>
+              <div id="question" class="shadow">
+                <p class="date">March 27, 2013</p>
+                <p>Given an array of integers containing at least n items, find the n largest.</p>
+                <div id="expander">
+<!-- 
+The editor window replaces this "pre" and copies the internal text with
+line breaks.
+-->
+<pre id="editor"># Currently only python formatting is supported.
+# Code execution is coming soon!
+# Enter your code here....
+</pre>
+                </div>
+                <div class="row">
+                  <div class="span1 offset5">
+                    <button id="trybtn" class="btn btn-primary">Try it</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- LIBRARIES
+    <!-- Additional Scripts
     ================================================== -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    $("#trybtn").click(function() {
+      if ($(this).text() == 'Hide') {
+        $("#expander").slideUp();
+        $(this).text("Try it");
+      } else {
+        $("#expander").slideDown();
+        window.editor.gotoLine(4);
+        window.editor.focus();
+        $(this).text("Hide");
+      }
+    });
+    </script>
+    <script>
+      window.editor = ace.edit("editor");
+      editor.setTheme("ace/theme/tomorrow_night_bright");
+      editor.getSession().setMode("ace/mode/python");
+    </script>
   </body>
 </html>
