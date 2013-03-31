@@ -35,9 +35,23 @@ img.hcenter {
 	margin-right: auto;
 }
 
+/* Notice
+================================================ */
+#notice {
+	display: none;
+	width: 100%;
+	height: 54px;
+	background-image: url('../img/notice-background.png');
+	background-repeat: repeat-x;
+}
+#notice p {
+	padding-top: 10px;
+}
+
 /* Question
 ================================================ */
 #question-overlay-layer {
+	display:none;
 	position: absolute;
 	z-index: 100;
 	top: 61px;

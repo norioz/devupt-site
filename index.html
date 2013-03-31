@@ -27,6 +27,9 @@
         </div>
       </div>
     </div>
+    <div id="notice">
+      <p class="text-center lead">devUpt has just gotten off the ground. Check back because new features are coming!</p>
+    </div>
     <div class="vspace"></div>
     <!-- BODY
     ================================================== -->
@@ -34,7 +37,8 @@
       <p class="text-center"><div id="question-spacer"></div></p>
       <div class="row">
         <div class="span4 offset4">
-          <p class="text-center"><img src="img/blocky-brain.png"></img></p>
+          <p class="text-center">
+            <img src="img/blocky-brain-2.png"></img></p>
         </div>
       </div>
     <!-- QUESTION OVERLAY
@@ -100,6 +104,11 @@ def find_missing(arr1, arr2):
       }
     </script> 
     <script type="text/javascript">
+    $("document").ready(function() {
+      setTimeout(function() {
+        $("#notice").slideDown();
+      }, 800);
+    });
     $("#trybtn").click(function() {
       if ($(this).text() == 'Try it') {
         $('#expander').slideDown();
