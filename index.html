@@ -27,31 +27,20 @@
         </div>
       </div>
     </div>
+    <!-- UNDER CONSTRUCTIO NOTICE
+    ================================================== -->
     <div id="notice">
-      <p class="text-center lead">devUpt has just gotten off the ground. Check back because new features are coming!</p>
+      <p class="text-center lead">We're new in town. Check back often. New features are coming!</p>
     </div>
-    <div class="vspace"></div>
-    <!-- BODY
-    ================================================== -->
-    <div class="container">
-      <p class="text-center"><div id="question-spacer"></div></p>
-      <div class="row">
-        <div class="span4 offset4">
-          <p class="text-center">
-            <img src="img/blocky-brain-2.png"></img></p>
-        </div>
-      </div>
-    <!-- QUESTION OVERLAY
-    ================================================== -->
-      <div id="question-overlay-layer">
-        <div class="container">
-          <div class="row">
-            <div class="span8 offset2">
-              <img class="hcenter" src="img/tape.png"></img>
-              <div id="question" class="shadow">
-                <p class="date">March 30, 2013</p>
-                <p>Given an unordered array of integer numbers (arr1) and a copy of that array with two numbers removed (arr2), write a function that returns the two removed numbers.</p>
-                <div id="expander">
+
+    <!-- PROGRAMMING PROBLEM
+    ================================================== -->    
+    <img id="tape" src="img/tape.png"></img>
+    <div id="question" class="shadow">
+      <p class="date">March 31, 2013</p>
+      <p>Given an unordered array of integer numbers (arr1) and a copy of that array with two numbers removed (arr2), write a function that returns the two removed numbers.</p>
+      <button id="trybtn" class="btn btn-primary">Try it</button>
+      <div id="expander">
 <!-- 
 The editor window replaces this "pre" and copies the internal text with
 line breaks.
@@ -60,19 +49,12 @@ line breaks.
 def find_missing(arr1, arr2):
     # Your code here....
 </pre>
-                  <pre id="output"></pre>
-                </div>
-                <div class="row">
-                  <div class="span1 offset5">
-                    <button id="trybtn" class="btn btn-primary">Try it</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<pre id="output"></pre>
+      <button id="runbtn" class="btn btn-primary">Run</button>
       </div>
     </div>
+    <img id="logo" src="img/blocky-brain.png"></img>
+
     <!-- Additional Scripts
     ================================================== -->
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -104,23 +86,19 @@ def find_missing(arr1, arr2):
       }
     </script> 
     <script type="text/javascript">
-    $("document").ready(function() {
-      setTimeout(function() {
-        $("#notice").slideDown();
-      }, 800);
-    });
     $("#trybtn").click(function() {
       if ($(this).text() == 'Try it') {
         $('#expander').slideDown();
         window.editor.gotoLine(4);
         window.editor.focus();
-        $(this).text('Run');
-      } else if ($(this).text() == 'Run') {
-        runit();
+        $(this).text('Hide');
       } else if ($(this).text() == 'Hide') {
         $('#expander').slideUp();
         $(this).text('Try it');
       }
+    });
+    $("#runbtn").click(function() {
+      runit();
     });
     </script>
     <script>

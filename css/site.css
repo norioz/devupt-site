@@ -3,20 +3,11 @@ body {
 	background-image:url('../img/background-grid-green.png');
 	background-repeat:repeat;
 }
-.vspace {
-	height: 20px;
-}
-
-/* STYLES FOR TESTING
-================================================ */
-.testing {
-	border: 1px solid black;
-}
-
-/* Space for the question box
-================================================ */
-#question-spacer {
-	height: 245px;
+@media (max-width: 767px) {
+  body {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
 }
 
 /* Shadow style
@@ -27,47 +18,37 @@ body {
 	box-shadow: 3px 3px 4px #000;
 }
 
-/* Horizontal center
-================================================ */
-img.hcenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 /* Notice
 ================================================ */
 #notice {
-	display: none;
 	width: 100%;
 	height: 54px;
 	background-image: url('../img/notice-background.png');
 	background-repeat: repeat-x;
+	overflow: hidden;
 }
 #notice p {
 	padding-top: 10px;
 }
 
+/* Scotch Tape
+================================================ */
+#tape {
+	display: block;
+	margin: 15px auto -25px auto;
+}
+
 /* Question
 ================================================ */
-#question-overlay-layer {
-	display:none;
-	position: absolute;
-	z-index: 100;
-	top: 61px;
-	left: 0px;
-	width: 100%;
-}
-
 #question {
+	width: 550px;
+	min-height: 60px;
 	background: white;
 	border: 1px solid gray;
-	min-height: 60px;
-	width: 545px;
-	margin: -25px auto 0 auto;
 	padding: 40px 40px 20px 40px;
+	margin-left: auto;
+	margin-right: auto;
 }
-
 #question p {
 	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 	font-size: 20px;
@@ -80,19 +61,31 @@ img.hcenter {
 
 /* Editor
 ================================================ */
+#expander {
+	display: none;
+	margin-top: 20px;
+}
 #editor {
 	width: 100%;
 	height: 300px;
 	background-color: lightblue;
 }
-#expander {
-	display: none;
-}
-/* STDOUT -- actually a pre called "output"
-================================================ */
 #output {
 	width: 100%;
 	max-height: 300px;
 	overflow-y: scroll;
 	overflow-x: auto;
+}
+
+/* Brain logo
+================================================ */
+#logo {
+	position: absolute;
+	top: 330px;
+	left: 50%;
+	z-index: -1;
+	display: block;
+	margin-left: -160px;
+	margin-top: 40px;
+	width: 320px;
 }
