@@ -31,7 +31,8 @@
 
     <div class="row-fluid">
       <div class="span5 offset1">
-        <!-- Exercise -->
+        <!-- EXERCISE
+        ================================================== -->
         <div id="question" class="rounded">
           <p><strong>April 9, 2013</strong></p>
           <p>For an array of integer numbers (arr1) and the same array with two items removed (arr2), write a function that returns the two removed numbers.</p>
@@ -42,35 +43,70 @@
         <img id="logo" src="img/blocky-brain.png"></img>
       </div>
     </div>
-
-    <div class="row-fluid">
-      <div class="span2 offset1">
-        <div class="stickynote note-blue shadow">
-          <p><strong>News</strong></p>
-        </div>
+    <!-- NEWS
+    ================================================== -->
+    <div class="row fluid">
+      <div class="span2 offset2">
+        <img class="sticker" src="img/n-sticker.png"></img>
       </div>
-      <div class="span2">
-        <div class="stickynote note-orange">
-          <p><strong>Projects</strong></p>
-        </div>
-      </div>
-      <div class="span2">
-        <div class="stickynote note-pink">
-          <p><strong>Classes</strong><p>
-        </div>
-      </div>
-      <div class="span2">
-        <div class="stickynote note-purple">
-          <p><strong>Other</strong></p>
-        </div>
-      </div>
-      <div class="span2">
-        <div class="stickynote note-green">
-          <p><strong>Tools</strong></p>
-        </div>
+      <div class="span6">
+        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
+        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
+        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
+        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
+        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
+        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
       </div>
     </div>
-
+    <div class="vspace" style="height:50px;"></div>
+    <!-- MEETUPS
+    ================================================== -->
+    <div class="row fluid">
+      <div class="span2 offset2">
+        <img class="sticker" src="img/m-sticker.png"></img>
+      </div>
+      <div class="span6">
+        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
+        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
+        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
+        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
+        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
+        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      </div>
+    </div>
+    <div class="vspace" style="height:50px;"></div>
+    <!-- CLASSES
+    ================================================== -->
+    <div class="row fluid">
+      <div class="span2 offset2">
+        <img class="sticker" src="img/c-sticker.png"></img>
+      </div>
+      <div class="span6">
+        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
+        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
+        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
+        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
+        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
+        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      </div>
+    </div>
+    <div class="vspace" style="height:50px;"></div>
+    <!-- TOOLS
+    ================================================== -->
+    <div class="row fluid">
+      <div class="span2 offset2">
+        <img class="sticker" src="img/t-sticker.png"></img>
+      </div>
+      <div class="span6">
+        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
+        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
+        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
+        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
+        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
+        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      </div>
+    </div>
+    
     <!-- Additional Scripts
     ================================================== -->
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -78,60 +114,5 @@
     <script src="lib/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/skulpt/skulpt.js" type="text/javascript"></script>
     <script src="lib/skulpt/builtin.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      function outf(text) {
-        var mypre = document.getElementById("output");
-        mypre.innerHTML = mypre.innerHTML + text;
-      }
-      function builtinRead(x) {
-        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-          throw "File not found: '" + x + "'";
-        return Sk.builtinFiles["files"][x];
-      }
-      function runit() {
-        var prog = (window.editor.getValue() + window.testcode);
-        var mypre = $("#output").get(0);
-        mypre.innerHTML = '';
-        Sk.pre = "output";
-        Sk.configure({output:outf, read:builtinRead});
-        try {
-          eval(Sk.importMainWithBody("<stdin>", false, prog));
-        } catch (e) {
-          alert(e);
-        }
-      }
-    </script> 
-    <script type="text/javascript">
-    $("#trybtn").click(function() {
-      if ($(this).text() == 'Try it') {
-        $('#expander').slideDown();
-        window.editor.gotoLine(4);
-        window.editor.focus();
-        $(this).text('Hide');
-      } else if ($(this).text() == 'Hide') {
-        $('#expander').slideUp();
-        $(this).text('Try it');
-      }
-    });
-    $("#runbtn").click(function() {
-      runit();
-    });
-    </script>
-    <script>
-      window.editor = ace.edit("editor");
-      editor.setTheme("ace/theme/tomorrow_night_bright");
-      editor.getSession().setMode("ace/mode/python");
-    </script>
-    <script>
-      window.testcode = "\n\
-arr1 = [5, 7, -1, 10, 0, 9]\n\
-arr2 = [5, 7, 10, 9]\n\
-a, b = find_missing(arr1, arr2)\n\
-if a == -1 and b == 0:\n\
-    print 'TEST 1 . . . PASS'\n\
-else:\n\
-    print 'TEST 1 . . . FAILED'\n\
-";
-    </script>
   </body>
 </html>
