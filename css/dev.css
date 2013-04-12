@@ -118,7 +118,7 @@ ul.agg-results li {
 	line-height: 10px;
 	margin-bottom: 10px;
 }
-li span.headline {
+ul.agg-results li span.headline {
 	display: block;
 	font-family: 'Neucha', cursive;
 	font-weight: bold;
@@ -127,24 +127,16 @@ li span.headline {
 	margin: 0;
 	padding: 0;	
 }
-li span.byline {
+ul.agg-results li span.byline {
 	font-size: 10px;
 	color: #9b999b;
 }
-p.headline {
-	font-family: 'Neucha', cursive;
-	font-weight: bold;
-	font-size: 18px;
-	margin: 0;
-	padding: 0;	
-}
-div.byline {
-	line-height: 10px;
-	font-size: 10px;
-	margin-bottom: 8px;
+span.byline a:-webkit-any-link {
 	color: #9b999b;
 }
 
+/* Stickers
+================================================ */
 img.sticker {
 	display: block;
 	margin: 0 auto;

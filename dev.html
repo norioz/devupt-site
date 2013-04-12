@@ -51,6 +51,19 @@
         <img class="sticker" src="img/n-sticker.png"></img>
       </div>
       <div id="news" class="span6">
+        <script type="text/javascript">
+          var elts = [];
+          for (var i = 0; i < 3; i++) {
+            var itm = agg.news[i];
+            itmhtml = '<li><span class="headline">'+itm.title+'</span>';
+            itmhtml += '<span class="byline"><a href="'+itm.link+'">'+itm.link+'</a></span></li>';
+            elts.push(itmhtml);
+          }
+          $('<ul/>', {
+            'class': 'agg-results',
+            html: elts.join('')
+          }).appendTo('#news');
+        </script>
       </div>
     </div>
     <div class="vspace" style="height:50px;"></div>
@@ -96,7 +109,7 @@
       for (var i = 0; i < 3; i++) {
         var itm = agg.news[i];
         itmhtml = '<li><span class="headline">'+itm.title+'</span>';
-        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        itmhtml += '<span class="byline"><a href="'+itm.link+'">'+itm.link+'</a></span></li>';
         elts.push(itmhtml);
       }
       $('<ul/>', {
@@ -108,7 +121,7 @@
       for (var i = 0; i < 3; i++) {
         var itm = agg.meetups[i];
         itmhtml = '<li><span class="headline">'+itm.title+'</span>';
-        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        itmhtml += '<span class="byline"><a href="'+itm.link+'">'+itm.link+'</a></span></li>';
         elts.push(itmhtml);
       }
       $('<ul/>', {
@@ -120,7 +133,7 @@
       for (var i = 0; i < 3; i++) {
         var itm = agg.courses[i];
         itmhtml = '<li><span class="headline">'+itm.title+'</span>';
-        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        itmhtml += '<span class="byline"><a href="'+itm.link+'">'+itm.link+'</a></span></li>';
         elts.push(itmhtml);
       }
       $('<ul/>', {
@@ -132,7 +145,7 @@
       for (var i = 0; i < 3; i++) {
         var itm = agg.projects[i];
         itmhtml = '<li><span class="headline">'+itm.title+'</span>';
-        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        itmhtml += '<span class="byline"><a href="'+itm.link+'">'+itm.link+'</a></span></li>';
         elts.push(itmhtml);
       }
       $('<ul/>', {
