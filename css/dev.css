@@ -109,6 +109,28 @@ div.vspace {
 
 /* News
 ================================================ */
+ul.agg-results {
+	margin: 0;
+	padding: 0;
+}
+ul.agg-results li {
+	list-style-type: none;
+	line-height: 10px;
+	margin-bottom: 10px;
+}
+li span.headline {
+	display: block;
+	font-family: 'Neucha', cursive;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 18px;
+	margin: 0;
+	padding: 0;	
+}
+li span.byline {
+	font-size: 10px;
+	color: #9b999b;
+}
 p.headline {
 	font-family: 'Neucha', cursive;
 	font-weight: bold;

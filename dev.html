@@ -12,6 +12,7 @@
     <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+    <script src="js/agg.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -49,13 +50,7 @@
       <div class="span2 offset2">
         <img class="sticker" src="img/n-sticker.png"></img>
       </div>
-      <div class="span6">
-        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
-        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
-        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
-        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
-        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
-        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      <div id="news" class="span6">
       </div>
     </div>
     <div class="vspace" style="height:50px;"></div>
@@ -65,45 +60,27 @@
       <div class="span2 offset2">
         <img class="sticker" src="img/m-sticker.png"></img>
       </div>
-      <div class="span6">
-        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
-        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
-        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
-        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
-        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
-        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      <div id="meetups" class="span6">
       </div>
     </div>
     <div class="vspace" style="height:50px;"></div>
-    <!-- CLASSES
+    <!-- COURSES
     ================================================== -->
     <div class="row fluid">
       <div class="span2 offset2">
         <img class="sticker" src="img/c-sticker.png"></img>
       </div>
-      <div class="span6">
-        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
-        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
-        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
-        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
-        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
-        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      <div id="courses" class="span6">
       </div>
     </div>
     <div class="vspace" style="height:50px;"></div>
-    <!-- TOOLS
+    <!-- PROJECTS
     ================================================== -->
     <div class="row fluid">
       <div class="span2 offset2">
-        <img class="sticker" src="img/t-sticker.png"></img>
+        <img class="sticker" src="img/p-sticker.png"></img>
       </div>
-      <div class="span6">
-        <p class="headline">YC-Backed Backlift Launches A Back-End Service For Front-End Developers</p>
-        <div class="byline">(techcrunch) Frederic Lardinois | posted 1 hour ago</div>
-        <p class="headline">Mozilla's Gary Kovacs to step down as CEO</p>
-        <div class="byline">(mozilla.org) | posted 35 minutes ago</div>
-        <p class="headline">Google’s Chat Client “Babel” Shows Up All Over The Web In Screenshots</p>
-        <div class="byline">(techcrunch) | posted 35 minutes ago</div>
+      <div id="projects" class="span6">
       </div>
     </div>
 
@@ -114,5 +91,54 @@
     <script src="lib/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/skulpt/skulpt.js" type="text/javascript"></script>
     <script src="lib/skulpt/builtin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var elts = [];
+      for (var i = 0; i < 3; i++) {
+        var itm = agg.news[i];
+        itmhtml = '<li><span class="headline">'+itm.title+'</span>';
+        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        elts.push(itmhtml);
+      }
+      $('<ul/>', {
+        'class': 'agg-results',
+        html: elts.join('')
+      }).appendTo('#news');
+      // ---------- meetups ------------
+      elts = [];
+      for (var i = 0; i < 3; i++) {
+        var itm = agg.meetups[i];
+        itmhtml = '<li><span class="headline">'+itm.title+'</span>';
+        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        elts.push(itmhtml);
+      }
+      $('<ul/>', {
+        'class': 'agg-results',
+        html: elts.join('')
+      }).appendTo('#meetups');
+      // ---------- courses ------------
+      elts = [];
+      for (var i = 0; i < 3; i++) {
+        var itm = agg.courses[i];
+        itmhtml = '<li><span class="headline">'+itm.title+'</span>';
+        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        elts.push(itmhtml);
+      }
+      $('<ul/>', {
+        'class': 'agg-results',
+        html: elts.join('')
+      }).appendTo('#courses');
+      // ---------- projects ------------
+      elts = [];
+      for (var i = 0; i < 3; i++) {
+        var itm = agg.projects[i];
+        itmhtml = '<li><span class="headline">'+itm.title+'</span>';
+        itmhtml += '<span class="byline">'+itm.link+'</span></li>';
+        elts.push(itmhtml);
+      }
+      $('<ul/>', {
+        'class': 'agg-results',
+        html: elts.join('')
+      }).appendTo('#projects');
+    </script>
   </body>
 </html>
