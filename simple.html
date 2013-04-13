@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>devUpt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="code exercises and programmer news">
+    <meta name="author" content="devUpt">
+    <meta name="google-site-verification" content="SumUDwdfl273VDR6FXAow8wJ3jZ1u5D4Y2_cAS8GyMU"/>
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/simple.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png">
+  </head>
+
+  <body>
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="du-navbar">
+      <img id="logo" src="img/du-logo-trans.png"></img>
+      <div class="menu-button">Log In</div>
+      <div class="menu-button">About Us</div>
+    </div>
+
+    <div id="first-row" class="row-fluid">
+      <!-- AGGREGATOR LINKS
+      ================================================== -->
+      <div id="agg-col" class="span4 offset1">
+      </div>
+      <!-- DATE
+      ================================================== -->
+      <div id="date-col" class="span2">
+        <p id="day-name" class="text-center">Saturday</p>
+        <p id="day-number" class="text-center">13</p>
+      </div>
+      <!-- EXERCISE
+      ================================================== -->
+      <div id="exe-col" class="span4">
+        <p id="exercise" class="text-center">Find the 4 largest elements in an array of integer numbers.</p>
+        <button id="tryit-btn" class="btn btn-primary">Try it</button>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION SECTION
+    ================================================== -->
+    <div id="second-row" class="row-fluid bg-green">
+      <div class="span6 offset2">
+        <h2>WHAT'S THIS ALL ABOUT?</h2>
+        <p class="lead">Being a pro means staying sharp through practice and attention. We're here to make staying up-to-date easy and fun.</p>
+      </div>
+      <div class="span2">
+        <img src="img/superkid-tmp.png"></img>
+      </div>
+    </div>
+
+
+    <!-- Additional Scripts
+    ================================================== -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/skulpt/skulpt.js" type="text/javascript"></script>
+    <script src="lib/skulpt/builtin.js" type="text/javascript"></script>
+    <script src="js/agg.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var elts = [];
+      var itm = agg.news[0];
+      var elt = '<tr><td><img src="img/n-sticker-sm.png"></img></td>';
+      elt += '<td><p><span class="headline">'+itm.title+'</span></p></td>';
+      elts.push(elt);
+      itm = agg.meetups[0];
+      elt = '<tr><td><img src="img/m-sticker-sm.png"></img></td>';
+      elt += '<td><p><span class="headline">'+itm.title+'</span>';
+      elt += '<span class="link"><a href="'+itm.link+'">'+itm.link+'</a></span></p></td>';
+      elts.push(elt);
+      itm = agg.courses[0];
+      elt = '<tr><td><img src="img/c-sticker-sm.png"></img></td>';
+      elt += '<td><p><span class="headline">'+itm.title+'</span>';
+      elt += '<span class="link"><a href="'+itm.link+'">'+itm.link+'</a></span></p></td>';
+      elts.push(elt);
+      itm = agg.projects[0];
+      elt = '<tr><td><img src="img/p-sticker-sm.png"></img></td>';
+      elt += '<td><p><span class="headline">'+itm.title+'</span>';
+      elt += '<span class="link"><a href="'+itm.link+'">'+itm.link+'</a></span></p></td>';
+      elts.push(elt);
+      $('<table/>', {
+        html: elts.join('')
+      }).appendTo('#agg-col');
+    </script>
+  </body>
+</html>

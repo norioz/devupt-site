@@ -1,0 +1,144 @@
+/* COLORS
+================================================
+
+-----
+dark-gray : #444444;
+gray : #777777;
+light-gray : #9b999b;
+bg-slate-dark : #dddddd;
+bg-slate : #efefef;
+66nnnn
+bg-green : rgba(119, 170, 136, 1.0);
+*/
+@media (max-width: 767px) {
+  body {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+body {
+	background-color: #efefef;
+	color: #444444;
+}
+
+/* Testing
+================================================ */
+.test {
+	border: 1px solid black;
+}
+
+/* Rounded corners
+================================================ */
+.rounded {
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #444444;
+	background: #efefef;
+	border: 1px solid #9b999b;
+}
+
+/* Rows
+================================================ */
+#first-row {
+	min-height: 380px;
+}
+#second-row {
+	padding: 50px 0;
+	min-height: 120px;
+	color: #efefef;
+}
+
+/* Columns
+================================================ */
+#agg-col {
+	margin-top: 80px;
+}
+#date-col {
+	margin-top: 110px;
+}
+#exe-col {
+	margin-top: 140px;
+}
+
+/* Green background
+================================================ */
+.bg-green {
+	background: rgba(119, 170, 136, 1.0);
+}
+
+/* devUpt Navbar
+================================================ */
+img#logo {
+	height: 35px;
+	margin-bottom: 3px;
+}
+.du-navbar {
+	width: 83%;
+	margin: 0 auto;
+	border-bottom: 1px solid #dddddd;
+}
+.menu-button {
+	float: right;
+	color: #9b999b;
+	border: 1px solid #dddddd;
+	margin: 3px;
+	padding: 4px;
+}
+
+/* DATE
+================================================ */
+#day-name {
+	line-height: 36px;
+	font-size: 36px;
+	font-family: Impact, Charcoal, sans-serif;
+}
+#day-number {
+	line-height: 125px;
+	font-size: 125px;
+	font-family: Impact, Charcoal, sans-serif;
+	margin-top: -20px;
+}
+
+/* EXERCISE
+================================================ */
+#exercise {
+	line-height: 26px;
+	font-size: 24px;
+}
+#tryit-btn {
+	display: block;
+	margin: 20px auto;
+}
+
+/* AGGREGATOR
+================================================ */
+#agg-col table {
+	width: 100%;
+	line-height: 14px;
+}
+#agg-col table tr {
+	vertical-align: top;
+}
+#agg-col table tr td p {
+	margin: 0 0 0 0;
+}
+#agg-col table tr td img {
+	display: block;
+	margin-bottom: 7px;
+}
+span.headline {
+	display: block;
+	font-weight: bold;
+	line-height: 14px;
+	margin: 0;
+	padding: 0;	
+}
+span.link {
+	font-size: 10px;
+	line-height: 10px;
+	color: #9b999b;
+}
+span.link a:-webkit-any-link {
+	color: #9b999b;
+}
