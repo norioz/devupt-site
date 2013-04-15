@@ -142,3 +142,25 @@ span.link {
 span.link a:-webkit-any-link {
 	color: #9b999b;
 }
+
+/* TEAM PHOTOS
+================================================ */
+#team-headline {
+	margin-top: 50px;
+}
+.team-photo {
+	display: block;
+	margin: 0 auto;
+}
+.team-name {
+	margin:20px 0 80px 0;
+}
+
+/* FOOTER
+================================================ */
+#footer {
+	padding-top: 20px;
+	min-height: 180px;
+	background: #9b999b;
+	color: #777777;
+}
