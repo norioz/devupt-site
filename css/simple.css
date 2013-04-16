@@ -44,9 +44,12 @@ body {
 	min-height: 380px;
 }
 #second-row {
-	padding: 50px 0;
 	min-height: 120px;
 	color: #efefef;
+}
+.homepage-section {
+	width: 100%;
+	padding: 50px 0;
 }
 
 /* Columns
@@ -145,22 +148,23 @@ span.link a:-webkit-any-link {
 
 /* TEAM PHOTOS
 ================================================ */
-#team-headline {
-	margin-top: 50px;
-}
 .team-photo {
 	display: block;
 	margin: 0 auto;
 }
 .team-name {
-	margin:20px 0 80px 0;
+	margin:20px 0 40px 0;
 }
 
 /* FOOTER
 ================================================ */
-#footer {
-	padding-top: 20px;
-	min-height: 180px;
-	background: #9b999b;
-	color: #777777;
+#du-footer {
+	width: 83%;
+	margin: 0 auto;
+	padding: 8px 0;
+	border-top: 1px solid #dddddd;
+	color: #9b999b;
+}
+#du-footer p#copyright {
+	float: right;
 }
